@@ -1,0 +1,5 @@
+<div *ngFor="let dog of dogs;">
+    {{dog.name}}
+    <img [src]="dog.image.url" [alt]="dog.name">
+    <a><i class="fa-regular fa-heart"></i></a>
+</div>

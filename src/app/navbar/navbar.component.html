@@ -1,0 +1,4 @@
+<button (click)="escolherMenu(1)">Login</button>
+<button (click)="escolherMenu(2)">Register</button>
+<app-login *ngIf="menu == 1"></app-login>
+<app-register *ngIf="menu == 2"></app-register>
