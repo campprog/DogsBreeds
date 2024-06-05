@@ -205,6 +205,12 @@
       "username": "user4",
       "password": "password",
       "likes": []
+    },
+    {
+      "id": "693c",
+      "username": "user1",
+      "password": "ad",
+      "likes": []
     }
   ],
   "dogs": [

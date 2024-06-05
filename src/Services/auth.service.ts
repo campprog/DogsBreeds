@@ -41,11 +41,6 @@ export class AuthService {
         }))
     }
 
-    public allUsers(): Observable<User[]> {
-        return this.http.get(`http://localhost:3000/users`).pipe(map((response) => {
-            return response as User[]
-        }))
-    }
 
     public logout(): void {
         this.userLogged = null;

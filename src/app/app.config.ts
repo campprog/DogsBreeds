@@ -5,10 +5,11 @@ import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../Services/auth.service';
 import { AllDogsService } from '../Services/allDogs.service';
+import { UserServices } from '../Services/user.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    AuthService, AllDogsService,
+    AuthService, AllDogsService, UserServices,
     importProvidersFrom(HttpClientModule)]
 };

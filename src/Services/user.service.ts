@@ -7,4 +7,10 @@ export class UserServices {
     //aqui faz as request da api para ir buscar os likes e meter na pagina dos likes do user
 
 
+    constructor(private http: HttpClient) { }
+    public allUsers(): Observable<User[]> {
+        return this.http.get(`http://localhost:3000/users`).pipe(map((response) => {
+            return response as User[]
+        }))
+    }
 }

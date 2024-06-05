@@ -1,5 +1,6 @@
 <p>Username: </p>
 <input type="text" [(ngModel)]="user.username">
 <p>Password: </p>
-<input type="text" [(ngModel)]="user.password">
+<input type="password" class="form-control" name="password" [(ngModel)]="user.password" required>
+
 <button (click)="register()">Regist</button>
