@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './all-dogs.component.css'
 })
 export class AllDogsComponent {
-  dogs: Dog[] = []
+  dogs: Dog[] = [];
+  search: string = '';
   constructor(private AllDogService: AllDogsService) { }
 
   ngOnInit(): void {
@@ -31,5 +32,21 @@ export class AllDogsComponent {
         console.log(error)
       }
     })
+  }
+
+  searchDogs() {
+    this.dogs = [];
+    console.log("asdsss");
+    this.AllDogService.searchDog(this.search).subscribe({
+
+      next: (response) => {
+        this.dogs = response;
+        console.log(response);
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    })
+
   }
 }

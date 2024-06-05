@@ -9,8 +9,8 @@ export class UserServices {
 
     constructor(private http: HttpClient) { }
     public allUsers(): Observable<User[]> {
-        return this.http.get(`http://localhost:3000/users`).pipe(map((response) => {
-            return response as User[]
+        return this.http.get(`http://localhost:3000/users`).pipe(map((response: any) => {
+            return response.map((u: any) => new User(u))
         }))
     }
 }

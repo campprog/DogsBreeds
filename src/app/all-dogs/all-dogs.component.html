@@ -1,5 +1,13 @@
+<div>
+    <input type="text" [(ngModel)]="search">
+    <button (click)="searchDogs()">Pesquisar</button>
+    <button (click)="getAllDogs()">Home</button>
+
+</div>
+
 <div *ngFor="let dog of dogs;">
     {{dog.name}}
+
     <img [src]="dog.image.url" [alt]="dog.name" class="img-fluid fixed-size">
     <a><i class="fa-regular fa-heart"></i></a>
 </div>

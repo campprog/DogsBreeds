@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, EventEmitter, Output, ViewChild, viewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { User } from '../../Models/user.model';
 import { AuthService } from '../../Services/auth.service';
 import { Router } from '@angular/router';
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  @ViewChild("loginForm") form: NgForm;
   username: string = '';
   password: string = '';
 

@@ -1,8 +1,12 @@
 
 export class User {
-    constructor(
-        public username: string,
-        public password: string,
-        public likes: number[]
-    ) { }
+    username: string;
+    password: string;
+    likes: number[];
+    constructor(apiResponse: any) {
+        this.username = apiResponse.username;
+        this.password = apiResponse.password;
+        this.likes = apiResponse.likes;
+
+    }
 }

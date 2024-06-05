@@ -5,6 +5,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class AllDogsService {
+
     constructor(private http: HttpClient) { }
 
     getDogs(): Observable<Dog[]> {
@@ -13,4 +14,15 @@ export class AllDogsService {
 
         }))
     }
+
+
+
+    searchDog(search: string): Observable<Dog[]> {
+        return this.http.get(`http://localhost:3000/dogs?name_like=${search}`).pipe(map((response: any) => {
+            return response.map((cao: any) => new Dog(cao));
+        }))
+
+    }
+
+
 }

@@ -36,7 +36,7 @@ export class AuthService {
 
     public register(user: User): Observable<User> {
         return this.http.post(`http://localhost:3000/users`, user).pipe(map((response: any) => {
-            return response as User;
+            return response.map((u: any) => new User(u))
 
         }))
     }

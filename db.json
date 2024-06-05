@@ -211,6 +211,30 @@
       "username": "user1",
       "password": "ad",
       "likes": []
+    },
+    {
+      "id": "bfbb",
+      "username": "qqq",
+      "password": "qwe",
+      "likes": []
+    },
+    {
+      "id": "bbad",
+      "username": "jk",
+      "password": " mmmm",
+      "likes": []
+    },
+    {
+      "id": "b988",
+      "username": "user1",
+      "password": "password",
+      "likes": []
+    },
+    {
+      "id": "0e84",
+      "username": "danigon",
+      "password": "danigon123",
+      "likes": []
     }
   ],
   "dogs": [
