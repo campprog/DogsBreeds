@@ -15,15 +15,19 @@ import { FormsModule } from '@angular/forms';
 export class AllDogsComponent {
   dogs: Dog[] = [];
   search: string = '';
+  pageNumber: number = 1;
+  pageBool: boolean = false;
   constructor(private AllDogService: AllDogsService) { }
 
   ngOnInit(): void {
     this.getAllDogs();
+    this.pageBool;
+
   }
 
   getAllDogs() {
     console.log("asdas");
-    this.AllDogService.getDogs().subscribe({
+    this.AllDogService.getDogs(this.pageNumber).subscribe({
       next: (response) => {
 
         this.dogs = response;
@@ -48,5 +52,19 @@ export class AllDogsComponent {
       }
     })
 
+  }
+
+  nextPage() {
+    this.pageNumber++;
+    console.log(this.pageNumber)
+  }
+  backpage(): boolean {
+    if (this.pageNumber != 1) {
+      console.log(this.pageNumber, this.pageBool)
+      return this.pageBool;
+    }
+    else {
+      return this.pageBool;
+    }
   }
 }

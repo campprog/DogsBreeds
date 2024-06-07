@@ -11,3 +11,6 @@
     <img [src]="dog.image.url" [alt]="dog.name" class="img-fluid fixed-size">
     <a><i class="fa-regular fa-heart"></i></a>
 </div>
+
+<button (click)="backpage()" *ngIf="pageBool">previous</button>
+<button (click)="nextPage()">next</button>
