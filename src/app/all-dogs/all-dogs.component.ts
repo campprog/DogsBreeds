@@ -21,7 +21,6 @@ export class AllDogsComponent {
 
   ngOnInit(): void {
     this.getAllDogs();
-    this.pageBool;
 
   }
 
@@ -29,7 +28,6 @@ export class AllDogsComponent {
     console.log("asdas");
     this.AllDogService.getDogs(this.pageNumber).subscribe({
       next: (response) => {
-
         this.dogs = response;
       },
       error: (error) => {
@@ -45,7 +43,7 @@ export class AllDogsComponent {
 
       next: (response) => {
         this.dogs = response;
-        console.log(response);
+
       },
       error: (error) => {
         console.log(error)
@@ -56,6 +54,7 @@ export class AllDogsComponent {
 
   nextPage() {
     this.pageNumber++;
+    this.getAllDogs();
     console.log(this.pageNumber)
   }
   backpage(): boolean {

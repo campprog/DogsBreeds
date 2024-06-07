@@ -11,7 +11,6 @@ export class AllDogsService {
     getDogs(pageNumber: number): Observable<Dog[]> {
         return this.http.get(`http://localhost:3000/dogs?_page=${pageNumber}&_limit=10`).pipe(map((response: any) => {
             return response.map((d: any) => new Dog(d))
-
         }))
     }
 
