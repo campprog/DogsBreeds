@@ -55,15 +55,20 @@ export class AllDogsComponent {
   nextPage() {
     this.pageNumber++;
     this.getAllDogs();
-    console.log(this.pageNumber)
+
   }
-  backpage(): boolean {
+  backpage() {
+    this.pageNumber--;
+    this.getAllDogs();
+  }
+
+  verifyPage(): boolean {
     if (this.pageNumber != 1) {
-      console.log(this.pageNumber, this.pageBool)
-      return this.pageBool;
+      return true;
     }
     else {
-      return this.pageBool;
+      return false;
     }
   }
+
 }
