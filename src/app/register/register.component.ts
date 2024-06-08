@@ -15,7 +15,7 @@ import { UserServices } from '../../Services/user.service';
 })
 export class RegisterComponent {
 
-  user: User = { username: '', password: '', likes: [] };
+  user: User;
 
   constructor(private AuthService: AuthService, private userService: UserServices, private router: Router) { }
 

@@ -3,6 +3,7 @@ import { AllDogsComponent } from './all-dogs/all-dogs.component';
 import { authGuard } from '../auth/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { DogRaceComponent } from './dog-race/dog-race.component';
 
 export const routes: Routes = [
     {
@@ -17,5 +18,9 @@ export const routes: Routes = [
     {
         path: 'register',
         component: RegisterComponent
+    },
+    {
+        path: 'dogRace/:id',
+        component: DogRaceComponent
     }
 ];

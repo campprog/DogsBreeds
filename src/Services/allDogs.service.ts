@@ -8,13 +8,11 @@ export class AllDogsService {
 
     constructor(private http: HttpClient) { }
 
-    getDogs(pageNumber: number): Observable<Dog[]> {
-        return this.http.get(`http://localhost:3000/dogs?_page=${pageNumber}&_limit=10`).pipe(map((response: any) => {
+    getDogs(pageNumber: number, page: number): Observable<Dog[]> {
+        return this.http.get(`http://localhost:3000/dogs?_page=${pageNumber}&_limit=${page}`).pipe(map((response: any) => {
             return response.map((d: any) => new Dog(d))
         }))
     }
-
-
 
     searchDog(search: string): Observable<Dog[]> {
         return this.http.get(`http://localhost:3000/dogs?name_like=${search}`).pipe(map((response: any) => {
@@ -23,5 +21,9 @@ export class AllDogsService {
 
     }
 
-
+    getOneDog(id: number): Observable<Dog> {
+        return this.http.get(`http://localhost:3000/dogs/${id}`).pipe(map((response: any) => {
+            return new Dog(response);
+        }))
+    }
 }
