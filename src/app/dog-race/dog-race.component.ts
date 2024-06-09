@@ -3,11 +3,12 @@ import { AllDogsComponent } from '../all-dogs/all-dogs.component';
 import { Dog } from '../../Models/dog.model';
 import { AllDogsService } from '../../Services/allDogs.service';
 import { ActivatedRoute } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-dog-race ',
   standalone: true,
-  imports: [AllDogsComponent],
+  imports: [AllDogsComponent, NavbarComponent],
   templateUrl: './dog-race.component.html',
   styleUrl: './dog-race.component.css'
 

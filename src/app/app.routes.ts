@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DogRaceComponent } from './dog-race/dog-race.component';
 import { UserLikesComponent } from './user-likes/user-likes.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 export const routes: Routes = [
     {
@@ -18,14 +19,22 @@ export const routes: Routes = [
     },
     {
         path: 'register',
-        component: RegisterComponent
+        component: RegisterComponent,
+        canActivate: [authGuard]
+
     },
     {
         path: 'dogRace/:id',
-        component: DogRaceComponent
+        component: DogRaceComponent,
+        canActivate: [authGuard]
+
     },
     {
         path: 'userLikes',
-        component: UserLikesComponent
-    }
+        component: UserLikesComponent,
+        canActivate: [authGuard]
+
+    },
+    
+  
 ];

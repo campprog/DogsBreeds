@@ -9,13 +9,14 @@ import { UserServices } from '../../Services/user.service';
 import { AuthService } from '../../Services/auth.service';
 import { findIndex } from 'rxjs';
 import { User } from '../../Models/user.model';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 
 
 @Component({
   selector: 'app-all-dogs',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, NavbarComponent],
   templateUrl: './all-dogs.component.html',
   styleUrl: './all-dogs.component.css'
 })
@@ -110,6 +111,7 @@ export class AllDogsComponent {
   verifyNextPage(): boolean {
     return this.dogs.length == 10;
   }
+ 
   directToUserLikes() {
     this.router.navigate(['/userLikes']);
   }

@@ -6,11 +6,12 @@ import { AuthService } from '../../Services/auth.service';
 import { Dog } from '../../Models/dog.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-user-likes',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NavbarComponent],
   templateUrl: './user-likes.component.html',
   styleUrl: './user-likes.component.css'
 })
