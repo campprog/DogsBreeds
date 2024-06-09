@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { UserServices } from '../../Services/user.service';
 import { AuthService } from '../../Services/auth.service';
+import { findIndex } from 'rxjs';
+import { User } from '../../Models/user.model';
 
 
 
@@ -27,27 +29,36 @@ export class AllDogsComponent {
 
 
   constructor(private AllDogService: AllDogsService, private userService: UserServices, private authService: AuthService) { }
-
+  user: User = this.authService.userLogged;
   toggleHeart() {
     this.heartSelected = !this.heartSelected;
   }
-  verifyLikes() {
-    this.userService.getOneUser(this.authService.userLogged).subscribe({
-      next: (response) => {
-        for (let i = 0; i < response.likes.length; i++) {
-          for (let j = 0; j < this.dogs.length; j++)
-            if (this.dogs[i].id == response.likes[i]) {
-              //meter aqui a condiçao caso seja encontrado no array de likes o id do cao, meter o coracao ja preenchido
-              //ou meter no getAllDogs()? em que recebe o userLogged do authservice
-            }
-        }
+  verifyLikes(dogId: number): boolean {
+    for (let like of this.authService.userLogged.likes) {
+      if (like == dogId) {
+
+        return true;
       }
-    })
+    }
+
+    return false;
+
   }
-  getLiked(id: number) {
-    this.authService.userLogged.likes.push(id)
+
+  setDogLiked(dogId: number) {
+    if (this.verifyLikes(dogId)) {
+      let findIndex: number = this.authService.userLogged.likes.findIndex((element) => element == dogId);
+      console.log(findIndex)
+      this.authService.userLogged.likes.splice(findIndex, 1)
+      console.log(this.authService.userLogged.likes)
+
+    }
+    else {
+      this.authService.userLogged.likes.push(dogId)
+    }
     this.userService.addLike(this.authService.userLogged).subscribe({
       next: (response) => {
+
         this.authService.userLogged = response
       }
     })

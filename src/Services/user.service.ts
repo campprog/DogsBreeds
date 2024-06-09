@@ -13,7 +13,9 @@ export class UserServices {
     }
 
     addLike(user: User): Observable<User> {
-        return this.http.patch<User>(`http://localhost:3000/users/${user.id}`, user)
+        return this.http.patch<User>(`http://localhost:3000/users/${user.id}`, {
+            likes: user.likes
+        })
     }
 
     getOneUser(user: User): Observable<User> {
@@ -21,4 +23,5 @@ export class UserServices {
             return new User(response)
         }))
     }
+
 }
