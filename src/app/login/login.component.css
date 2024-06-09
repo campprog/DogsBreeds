@@ -1,0 +1,66 @@
+/* Adiciona bordas arredondadas e sombra ao cartão */
+.card {
+    border-radius: 10px;
+}
+
+/* Estiliza o título do cartão */
+.card-title {
+    font-weight: bold;
+    color: #8B4513;
+    /* Castanho claro */
+}
+
+/* Ajusta o padding dos inputs */
+.form-control {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Adiciona uma cor vermelha ao texto de erro */
+.text-danger {
+    font-size: 0.875rem;
+}
+
+/* Estiliza os botões */
+.btn-brown {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+}
+
+.btn-brown:hover {
+    background-color: #A0522D;
+    /* Tom de castanho mais claro */
+}
+
+.btn-secondary {
+    background-color: #D2B48C;
+    /* Tom de castanho claro */
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #DEB887;
+    /* Tom de castanho mais claro */
+}
+
+.btn-success {
+    background-color: #6B8E23;
+    /* Verde oliva para contraste */
+    color: white;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #556B2F;
+    /* Verde oliva mais escuro */
+}
+
+/* Estiliza o formulário para ser mais estreito e alinhado à esquerda */
+.dog-breed-form {
+    max-width: 400px;
+    /* Define a largura máxima do formulário */
+    margin: auto;
+    /* Centraliza horizontalmente */
+}

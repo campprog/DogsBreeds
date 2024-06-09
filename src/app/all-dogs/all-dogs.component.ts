@@ -4,7 +4,7 @@ import { AllDogsService } from '../../Services/allDogs.service';
 import { Dog } from '../../Models/dog.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterEvent, RouterLink } from '@angular/router';
 import { UserServices } from '../../Services/user.service';
 import { AuthService } from '../../Services/auth.service';
 import { findIndex } from 'rxjs';
@@ -25,40 +25,31 @@ export class AllDogsComponent {
   pageNumber: number = 1;
   limit: number = 10;
   heartSelected: boolean = false;
-
-
-
-  constructor(private AllDogService: AllDogsService, private userService: UserServices, private authService: AuthService) { }
   user: User = this.authService.userLogged;
+
+  constructor(private AllDogService: AllDogsService, private userService: UserServices, private authService: AuthService, private router: Router) { }
+
   toggleHeart() {
     this.heartSelected = !this.heartSelected;
   }
   verifyLikes(dogId: number): boolean {
     for (let like of this.authService.userLogged.likes) {
       if (like == dogId) {
-
         return true;
       }
     }
-
     return false;
-
   }
-
   setDogLiked(dogId: number) {
     if (this.verifyLikes(dogId)) {
       let findIndex: number = this.authService.userLogged.likes.findIndex((element) => element == dogId);
-      console.log(findIndex)
       this.authService.userLogged.likes.splice(findIndex, 1)
-      console.log(this.authService.userLogged.likes)
-
     }
     else {
       this.authService.userLogged.likes.push(dogId)
     }
     this.userService.addLike(this.authService.userLogged).subscribe({
       next: (response) => {
-
         this.authService.userLogged = response
       }
     })
@@ -69,7 +60,7 @@ export class AllDogsComponent {
   }
   getAllDogs() {
     console.log("asdas");
-    this.AllDogService.getDogs(this.pageNumber, this.limit).subscribe({
+    this.AllDogService.getDogsForPageNumber(this.pageNumber, this.limit).subscribe({
       next: (response) => {
         this.dogs = response;
       },
@@ -119,5 +110,7 @@ export class AllDogsComponent {
   verifyNextPage(): boolean {
     return this.dogs.length == 10;
   }
-
+  directToUserLikes() {
+    this.router.navigate(['/userLikes']);
+  }
 }

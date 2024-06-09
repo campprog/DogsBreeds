@@ -8,7 +8,7 @@ export class AllDogsService {
 
     constructor(private http: HttpClient) { }
 
-    getDogs(pageNumber: number, page: number): Observable<Dog[]> {
+    getDogsForPageNumber(pageNumber: number, page: number): Observable<Dog[]> {
         return this.http.get(`http://localhost:3000/dogs?_page=${pageNumber}&_limit=${page}`).pipe(map((response: any) => {
             return response.map((d: any) => new Dog(d))
         }))
@@ -22,6 +22,12 @@ export class AllDogsService {
     }
 
     getOneDog(id: number): Observable<Dog> {
+        return this.http.get(`http://localhost:3000/dogs/${id}`).pipe(map((response: any) => {
+            return new Dog(response);
+        }))
+    }
+
+    getdogsLiked(id: number): Observable<Dog> {
         return this.http.get(`http://localhost:3000/dogs/${id}`).pipe(map((response: any) => {
             return new Dog(response);
         }))

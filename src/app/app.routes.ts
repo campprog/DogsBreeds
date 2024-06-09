@@ -4,6 +4,7 @@ import { authGuard } from '../auth/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DogRaceComponent } from './dog-race/dog-race.component';
+import { UserLikesComponent } from './user-likes/user-likes.component';
 
 export const routes: Routes = [
     {
@@ -22,5 +23,9 @@ export const routes: Routes = [
     {
         path: 'dogRace/:id',
         component: DogRaceComponent
+    },
+    {
+        path: 'userLikes',
+        component: UserLikesComponent
     }
 ];
