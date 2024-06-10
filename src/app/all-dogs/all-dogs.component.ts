@@ -22,16 +22,28 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class AllDogsComponent {
   dogs: Dog[] = [];
-  search: string = '';
   pageNumber: number = 1;
   limit: number = 10;
   heartSelected: boolean = false;
   user: User = this.authService.userLogged;
+  search: string = '';
+  clickTriggered: boolean = false;
 
   constructor(private AllDogService: AllDogsService, private userService: UserServices, private authService: AuthService, private router: Router) { }
 
-  toggleHeart() {
-    this.heartSelected = !this.heartSelected;
+  searchDogs(search: string) {
+
+    this.AllDogService.searchDog(search).subscribe({
+
+      next: (response) => {
+        this.dogs = response;
+
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    })
+
   }
   verifyLikes(dogId: number): boolean {
     for (let like of this.authService.userLogged.likes) {
@@ -60,7 +72,7 @@ export class AllDogsComponent {
 
   }
   getAllDogs() {
-    console.log("asdas");
+    this.search = '';
     this.AllDogService.getDogsForPageNumber(this.pageNumber, this.limit).subscribe({
       next: (response) => {
         this.dogs = response;
@@ -69,21 +81,6 @@ export class AllDogsComponent {
         console.log(error)
       }
     })
-  }
-  searchDogs() {
-    this.dogs = [];
-    console.log("asdsss");
-    this.AllDogService.searchDog(this.search).subscribe({
-
-      next: (response) => {
-        this.dogs = response;
-
-      },
-      error: (error) => {
-        console.log(error)
-      }
-    })
-
   }
   nextPage(): boolean {
     this.pageNumber++;
@@ -94,8 +91,8 @@ export class AllDogsComponent {
     else {
       return true;
     }
-
   }
+
   backpage() {
     this.pageNumber--;
     this.getAllDogs();
@@ -111,7 +108,7 @@ export class AllDogsComponent {
   verifyNextPage(): boolean {
     return this.dogs.length == 10;
   }
- 
+
   directToUserLikes() {
     this.router.navigate(['/userLikes']);
   }

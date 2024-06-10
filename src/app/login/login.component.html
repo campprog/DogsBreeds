@@ -1,6 +1,8 @@
 <div class="vh-100 d-flex flex-center">
     <form (ngSubmit)="login()" class="card w-40 p-4 m-auto shadow-lg border-0 dog-breed-form" #loginForm="ngForm">
-        <div class="card-body">
+        <div class="card-body text-center">
+            <img src="assets\dogLogo.png" alt="Dog Breed Logo" class="navbar-logo">
+            <h2 class="site-title mb-4 text-center">Dog Breeds</h2>
             <h5 class="card-title mb-4 text-center">Login</h5>
             <div class="mb-3">
                 <label class="form-label visually-hidden">Username</label>
@@ -15,7 +17,7 @@
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="submit" [disabled]="!loginForm.valid" class="btn btn-brown me-2">Login</button>
-                <button type="button" (click)="register()" class="btn btn-success">Register</button>
+                <button type="button" (click)="register()" class="btn btn-register">Register</button>
             </div>
         </div>
     </form>

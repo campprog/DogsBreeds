@@ -1,18 +1,60 @@
-
-.navbar
-{
-    height: 65px;
-    margin-bottom: 20px;
-    background-color: green;
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
 }
 
-.foto
-{
-    border-radius: 50%;
+.navbar-logo {
+    width: 100px;
+    /* Defina a largura desejada */
+    height: auto;
+    /* Ajuste automaticamente a altura para manter a proporção */
 }
 
-.combobox
-{
-width: 30px;
-height: 30px;
+.search-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.search-box {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.search-box input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #8B4513;
+    /* Tom de castanho claro */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #A0522D;
+    /* Tom de castanho mais claro */
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #8B4513;
+    /* Tom de castanho claro */
+    color: white;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #A0522D;
+    /* Tom de castanho mais claro */
 }

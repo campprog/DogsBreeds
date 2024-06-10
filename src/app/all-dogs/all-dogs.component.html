@@ -1,12 +1,8 @@
-<app-navbar></app-navbar>
-
-<div>
-    <input type="text" [(ngModel)]="search">
-    <button (click)="searchDogs()">Pesquisar</button>
- 
-
+<app-navbar (clickEvent)="getAllDogs()"></app-navbar>
+<div class="search-box">
+    <input type="text" [(ngModel)]="search" placeholder="Search...">
+    <button (click)="searchDogs(search)">Pesquisar</button>
 </div>
-
 <div *ngFor="let dog of dogs;">
     <a [routerLink]="['/dogRace', dog.id]">
         <div>

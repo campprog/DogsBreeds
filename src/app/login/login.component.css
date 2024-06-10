@@ -3,17 +3,26 @@
     border-radius: 10px;
 }
 
+/* Estiliza o título do site */
+.site-title {
+    font-weight: 600;
+    color: #8B4513;
+}
+
 /* Estiliza o título do cartão */
 .card-title {
     font-weight: bold;
     color: #8B4513;
-    /* Castanho claro */
 }
 
 /* Ajusta o padding dos inputs */
 .form-control {
     padding: 10px;
     font-size: 1rem;
+    background-color: #FDFDFD;
+    /* Altera a cor de fundo do input */
+    border: 1px solid #D3D3D3;
+    /* Adiciona uma borda */
 }
 
 /* Adiciona uma cor vermelha ao texto de erro */
@@ -30,37 +39,40 @@
 
 .btn-brown:hover {
     background-color: #A0522D;
-    /* Tom de castanho mais claro */
 }
 
-.btn-secondary {
+.btn-register {
     background-color: #D2B48C;
-    /* Tom de castanho claro */
+    /* Altera a cor do botão Register */
     color: white;
     border: none;
 }
 
-.btn-secondary:hover {
+.btn-register:hover {
     background-color: #DEB887;
-    /* Tom de castanho mais claro */
-}
-
-.btn-success {
-    background-color: #6B8E23;
-    /* Verde oliva para contraste */
-    color: white;
-    border: none;
-}
-
-.btn-success:hover {
-    background-color: #556B2F;
-    /* Verde oliva mais escuro */
 }
 
 /* Estiliza o formulário para ser mais estreito e alinhado à esquerda */
 .dog-breed-form {
     max-width: 400px;
-    /* Define a largura máxima do formulário */
     margin: auto;
-    /* Centraliza horizontalmente */
+    background-color: #F9F9F9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Centraliza verticalmente */
+.vh-100 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estiliza o logo */
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
 }

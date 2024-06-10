@@ -1,10 +1,8 @@
 <div class="navbar">
- 
-
-    <div></div>
+    <img src="assets\dogLogo.png" alt="Dog Breed Logo" class="navbar-logo">
 </div>
 
-<div>
-    <button (click)="directToUserLikes()">Liked Dogs</button>
-    <button (click)="getAllDogs()">Home</button>
+<div class="search-container">
+    <button routerLink="/userLikes">Liked Dogs</button>
+    <button (click)="sendClick()">Home</button>
 </div>

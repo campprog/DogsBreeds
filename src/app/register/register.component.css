@@ -1,0 +1,39 @@
+/* Estiliza o formulário de registro */
+.dog-breed-form {
+    max-width: 400px;
+    margin: auto;
+    background-color: #F9F9F9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajusta o título do formulário */
+.card-title {
+    font-weight: bold;
+    color: #8B4513;
+}
+
+/* Ajusta o estilo dos inputs */
+.form-control {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Adiciona uma cor vermelha ao texto de erro */
+.text-danger {
+    font-size: 0.875rem;
+    color: red;
+}
+
+/* Estiliza o botão de registro */
+.btn-primary {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #A0522D;
+}

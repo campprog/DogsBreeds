@@ -20,7 +20,7 @@ export const routes: Routes = [
     {
         path: 'register',
         component: RegisterComponent,
-        canActivate: [authGuard]
+
 
     },
     {
@@ -35,6 +35,6 @@ export const routes: Routes = [
         canActivate: [authGuard]
 
     },
-    
-  
+
+
 ];
