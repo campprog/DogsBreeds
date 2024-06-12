@@ -20,10 +20,18 @@ export class NavbarComponent {
   @Output()
   clickEvent = new EventEmitter<void>()
 
+  showButtons: boolean = false;
   constructor(private router: Router) { }
   sendClick() {
     this.clickEvent.emit();
     this.router.navigate(['/']);
 
   }
+
+  showDropdown = false;
+
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
+  }
 }
+
