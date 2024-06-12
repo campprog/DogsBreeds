@@ -23,14 +23,14 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class AllDogsComponent {
   dogs: Dog[] = [];
   pageNumber: number = 1;
-  limit: number = 10;
+  limit: number = 9;
   heartSelected: boolean = false;
   user: User = this.authService.userLogged;
   search: string = '';
   clickTriggered: boolean = false;
 
   constructor(private AllDogService: AllDogsService, private userService: UserServices, private authService: AuthService, private router: Router) { }
-
+ 
   searchDogs(search: string) {
 
     this.AllDogService.searchDog(search).subscribe({
@@ -99,10 +99,10 @@ export class AllDogsComponent {
   }
   verifyPreviousPage(): boolean {
     if (this.pageNumber != 1) {
-      return true;
+      return false;
     }
     else {
-      return false;
+      return true;
     }
   }
   verifyNextPage(): boolean {

@@ -1,7 +1,9 @@
 <app-navbar></app-navbar>
 <div *ngFor="let dog of dogsLiked">
+
     <div>
         {{dog.name}}
         <img [src]="dog.image.url" [alt]="dog.name" class="img-fluid fixed-size">
     </div>
+
 </div>
