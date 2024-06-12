@@ -15,8 +15,7 @@ import { UserServices } from '../../Services/user.service';
 })
 export class RegisterComponent {
 
-  user: User;
-
+  user: User = new User({ username: '', password: '', likes: [] });
   constructor(private AuthService: AuthService, private userService: UserServices, private router: Router) { }
 
 
@@ -28,8 +27,9 @@ export class RegisterComponent {
           if (users[i].username === this.user.username) {
 
             window.alert("Usuário já existente");
-            break;
+            return;
           }
+
         }
         this.AuthService.register(this.user).subscribe({
           next: (user: User) => {

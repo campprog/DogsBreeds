@@ -21,7 +21,7 @@ export class NavbarComponent {
   clickEvent = new EventEmitter<void>()
 
   showButtons: boolean = false;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
   sendClick() {
     this.clickEvent.emit();
     this.router.navigate(['/']);
@@ -32,6 +32,20 @@ export class NavbarComponent {
 
   toggleDropdown() {
     this.showDropdown = !this.showDropdown;
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+
+  deleteAccount() {
+    this.authService.deleteAccount(this.authService.userLogged).subscribe({
+      next: (response) => {
+        alert(`Account was Deleted`);
+
+      }
+    })
+    this.router.navigate(['/login']);
   }
 }
 

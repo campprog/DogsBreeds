@@ -3,12 +3,13 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../Models/user.model";
 import { Observable, map } from "rxjs";
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class AuthService {
     userLogged: User | null = null;
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private route: Router) { }
 
     public isUserLogged(): boolean {
         if (this.userLogged != null)
@@ -36,13 +37,22 @@ export class AuthService {
 
     public register(user: User): Observable<User> {
         return this.http.post(`http://localhost:3000/users`, user).pipe(map((response: any) => {
-            return response.map((u: any) => new User(u))
+            return new User(response)
 
         }))
     }
 
 
     public logout(): void {
+
         this.userLogged = null;
+        this.route.navigate(['userLikes']);
+        //redirecionei para o userlike e assim ativa o canActivate 
+
+    }
+
+    public deleteAccount(user: User): Observable<User> {
+        return this.http.delete<User>(`http://localhost:3000/users/${user.id}`)
+
     }
 }

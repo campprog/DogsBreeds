@@ -9,7 +9,10 @@
     <div class="mb-3">
         <label class="form-label">Password</label>
         <input type="password" class="form-control" name="password" [(ngModel)]="user.password" required minlength="8"
-            placeholder="Password">
+            #passwordModel="ngModel" placeholder="Password">
+        <p *ngIf="passwordModel.errors?.['minlength'] && passwordModel.touched" class="text-danger mt-1">
+            Password must be at least 8 characters
+        </p>
     </div>
 
     <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary w-100">Register</button>

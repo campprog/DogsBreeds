@@ -1,32 +1,6 @@
 {
   "users": [
     {
-      "username": "user1",
-      "password": "password",
-      "likes": [
-        41,
-        212,
-        121,
-        115,
-        "9",
-        "4",
-        "2",
-        "3",
-        "1",
-        "14",
-        "5",
-        "15",
-        "11"
-      ],
-      "id": "9fdf"
-    },
-    {
-      "username": "user2",
-      "password": "password",
-      "likes": [],
-      "id": "0c7f"
-    },
-    {
       "id": "7a4e"
     },
     {
@@ -37,12 +11,6 @@
         22,
         222
       ]
-    },
-    {
-      "id": "ec0c",
-      "username": "asdad",
-      "password": "aaaa",
-      "likes": []
     },
     {
       "id": "42fb",
@@ -66,102 +34,6 @@
       "id": "e2eb",
       "username": "asddas",
       "password": "asdas",
-      "likes": []
-    },
-    {
-      "id": "1f95",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "b548",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "2518",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "3d4a",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "b59d",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "dfdb",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "1944",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "ed6c",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "5e22",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "f6c7",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "a5f1",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "3d76",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "64f3",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "a42b",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "a2de",
-      "username": "user1",
-      "password": "password",
-      "likes": []
-    },
-    {
-      "id": "a122",
-      "username": "user1",
-      "password": "password",
       "likes": []
     },
     {
@@ -213,12 +85,6 @@
       "likes": []
     },
     {
-      "id": "4dbe",
-      "username": "user4",
-      "password": "password",
-      "likes": []
-    },
-    {
       "id": "693c",
       "username": "user1",
       "password": "ad",
@@ -243,10 +109,16 @@
       "likes": []
     },
     {
-      "id": "0e84",
-      "username": "danigon",
-      "password": "danigon123",
-      "likes": []
+      "username": "tiago",
+      "password": "tiasgo123",
+      "likes": [],
+      "id": "MLyDgkV"
+    },
+    {
+      "username": "user123",
+      "password": "password",
+      "likes": [],
+      "id": "EaTAWN4"
     }
   ],
   "dogs": [

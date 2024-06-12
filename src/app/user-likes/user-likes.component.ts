@@ -5,13 +5,14 @@ import { AllDogsService } from '../../Services/allDogs.service';
 import { AuthService } from '../../Services/auth.service';
 import { Dog } from '../../Models/dog.model';
 import { CommonModule } from '@angular/common';
+import { Router, RouterEvent, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-user-likes',
   standalone: true,
-  imports: [CommonModule, FormsModule, NavbarComponent],
+  imports: [CommonModule, FormsModule, NavbarComponent, RouterLink],
   templateUrl: './user-likes.component.html',
   styleUrl: './user-likes.component.css'
 })

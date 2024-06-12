@@ -29,22 +29,19 @@ export class AllDogsComponent {
   search: string = '';
   clickTriggered: boolean = false;
 
-  constructor(private AllDogService: AllDogsService, private userService: UserServices, private authService: AuthService, private router: Router) { }
- 
+  constructor(private AllDogService: AllDogsService, private userService: UserServices, private authService: AuthService) { }
+
   searchDogs(search: string) {
-
     this.AllDogService.searchDog(search).subscribe({
-
       next: (response) => {
         this.dogs = response;
-
       },
       error: (error) => {
         console.log(error)
       }
     })
-
   }
+
   verifyLikes(dogId: number): boolean {
     for (let like of this.authService.userLogged.likes) {
       if (like == dogId) {
@@ -53,6 +50,7 @@ export class AllDogsComponent {
     }
     return false;
   }
+
   setDogLiked(dogId: number) {
     if (this.verifyLikes(dogId)) {
       let findIndex: number = this.authService.userLogged.likes.findIndex((element) => element == dogId);
@@ -67,10 +65,11 @@ export class AllDogsComponent {
       }
     })
   }
+
   ngOnInit(): void {
     this.getAllDogs();
-
   }
+
   getAllDogs() {
     this.search = '';
     this.AllDogService.getDogsForPageNumber(this.pageNumber, this.limit).subscribe({
@@ -82,6 +81,7 @@ export class AllDogsComponent {
       }
     })
   }
+
   nextPage(): boolean {
     this.pageNumber++;
     this.getAllDogs();
@@ -97,6 +97,7 @@ export class AllDogsComponent {
     this.pageNumber--;
     this.getAllDogs();
   }
+
   verifyPreviousPage(): boolean {
     if (this.pageNumber != 1) {
       return false;
@@ -105,11 +106,8 @@ export class AllDogsComponent {
       return true;
     }
   }
+
   verifyNextPage(): boolean {
     return this.dogs.length == 10;
-  }
-
-  directToUserLikes() {
-    this.router.navigate(['/userLikes']);
   }
 }
