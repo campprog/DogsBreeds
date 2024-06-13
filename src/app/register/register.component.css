@@ -37,3 +37,7 @@
 .btn-primary:hover {
     background-color: #A0522D;
 }
+
+.btn-secondary {
+    margin-top: 5px;
+}

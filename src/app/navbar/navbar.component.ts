@@ -9,6 +9,7 @@ import { AllDogsService } from '../../Services/allDogs.service';
 import { Dog } from '../../Models/dog.model';
 import { AllDogsComponent } from '../all-dogs/all-dogs.component';
 
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -46,6 +47,10 @@ export class NavbarComponent {
       }
     })
     this.router.navigate(['/login']);
+  }
+
+  navigateToChangePassword() {
+
   }
 }
 

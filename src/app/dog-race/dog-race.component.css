@@ -1,0 +1,88 @@
+/* Estilo para os cards dos cachorros */
+.dog-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: #fff;
+}
+
+.dog-card:hover {
+    transform: translateY(-5px);
+}
+
+.dog-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.dog-info {
+    padding: 10px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.dog-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none !important;
+    color: black;
+}
+
+.dog-detail {
+    font-size: 1rem;
+    color: #555;
+}
+
+.related-dogs {
+    margin-top: 40px;
+}
+
+.related-dogs h3 {
+    font-size: 1.5rem;
+    color: #8B4513;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+a:hover {
+    color: #8B4513;
+}
+
+.vh-100 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.btn-primary,
+.search-button {
+    background-color: #554141 !important;
+    border: 0;
+}
+
+.empty-message {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    /* Substitua com a fonte usada no seu projeto */
+}

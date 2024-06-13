@@ -1,2 +1,38 @@
 <app-navbar></app-navbar>
-{{dog.name}}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="dog-card">
+                <img src={{dog.image.url}} alt={{dog.name}} class="dog-image">
+                <div class="dog-info">
+                    <h2 class="dog-name">{{ dog.name }}</h2>
+                    <p class="dog-detail"><strong>Temperament:</strong> {{ dog.temperament }}</p>
+                    <p class="dog-detail"><strong>Origin:</strong> {{ dog.origin }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="related-dogs mt-5" *ngIf="showRelatedDogs">
+        <h3>Related Dogs</h3>
+        <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let relatedDog of relatedDogs">
+
+                <div class="dog-card" (click)="getDogDetails()">
+                    <a [routerLink]="['/dogRace', relatedDog.id]">
+                        <img src={{relatedDog.image.url}} alt={{relatedDog.name}} class="dog-image">
+                    </a>
+                    <div class="dog-info">
+                        <a [routerLink]="['/dogRace', relatedDog.id]">
+                            <h4 class="dog-name">{{relatedDog.name}}</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!showRelatedDogs" class="empty-message">
+        {{mensagemResponseNull}}
+    </div>
+</div>

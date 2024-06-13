@@ -110,8 +110,13 @@
     },
     {
       "username": "tiago",
-      "password": "tiasgo123",
-      "likes": [],
+      "password": "tiagotiagotiago",
+      "likes": [
+        "3",
+        "2",
+        "5",
+        "33"
+      ],
       "id": "MLyDgkV"
     },
     {

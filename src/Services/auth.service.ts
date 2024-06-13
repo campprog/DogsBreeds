@@ -46,7 +46,7 @@ export class AuthService {
     public logout(): void {
 
         this.userLogged = null;
-        this.route.navigate(['userLikes']);
+        this.route.navigate(['/login']);
         //redirecionei para o userlike e assim ativa o canActivate 
 
     }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../../Models/user.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -44,5 +44,10 @@ export class RegisterComponent {
         window.alert("Erro getting usuários");
       }
     });
+  }
+
+
+  onCancel() {
+    this.router.navigate(['/login']);
   }
 }

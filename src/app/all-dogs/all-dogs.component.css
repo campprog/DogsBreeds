@@ -15,16 +15,13 @@
 
 .search-button {
     padding: 10px 20px;
-    background-color: #007bff;
     border: none;
     border-radius: 5px;
     color: white;
     cursor: pointer;
 }
 
-.search-button:hover {
-    background-color: #0056b3;
-}
+
 
 /* Estilo para os cards dos cachorros */
 .dog-card {
@@ -58,7 +55,7 @@ a {
 
 .btn-primary,
 .search-button {
-    background-color: rgb(85, 65, 65) !important;
+    background-color: #554141 !important;
     border: 0;
 
 }

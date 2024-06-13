@@ -24,4 +24,11 @@ export class UserServices {
         }))
     }
 
+    changePassword(user: User): Observable<User> {
+        return this.http.patch<User>(`http://localhost:3000/users/${user.id}`, {
+            password: user.password
+        })
+
+    }
+
 }
