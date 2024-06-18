@@ -8,6 +8,7 @@ import { Router, RouterLink } from '@angular/router';
 import { AllDogsService } from '../../Services/allDogs.service';
 import { Dog } from '../../Models/dog.model';
 import { AllDogsComponent } from '../all-dogs/all-dogs.component';
+import { User } from '../../Models/user.model';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class NavbarComponent {
 
   showButtons: boolean = false;
   constructor(private router: Router, private authService: AuthService) { }
+  user: User = this.authService.userLogged;
   sendClick() {
     this.clickEvent.emit();
     this.router.navigate(['/']);
@@ -49,8 +51,6 @@ export class NavbarComponent {
     this.router.navigate(['/login']);
   }
 
-  navigateToChangePassword() {
 
-  }
 }
 

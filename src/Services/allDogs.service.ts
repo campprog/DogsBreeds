@@ -18,7 +18,6 @@ export class AllDogsService {
         return this.http.get(`http://localhost:3000/dogs?name_like=${search}`).pipe(map((response: any) => {
             return response.map((cao: any) => new Dog(cao));
         }))
-
     }
 
     getOneDog(id: number): Observable<Dog> {
@@ -31,5 +30,12 @@ export class AllDogsService {
         return this.http.get(`http://localhost:3000/dogs/${id}`).pipe(map((response: any) => {
             return new Dog(response);
         }))
+    }
+
+    addDogComments(dog: Dog): Observable<Dog> {
+        return this.http.patch<Dog>(`http://localhost:3000/dogs/${dog.id}`,
+            {
+                comments: dog.comments
+            })
     }
 }

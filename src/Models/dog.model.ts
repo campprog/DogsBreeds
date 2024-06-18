@@ -1,3 +1,4 @@
+import { Comments } from "./comments.model";
 import { Image } from "./image.model";
 import { WeightAndHeight } from "./weightAndHeight.model";
 
@@ -14,6 +15,7 @@ export class Dog {
     referenceImageId: string;
     image: Image;
     relatedIds: number[];
+    comments: Comments[];
 
     constructor(apiResponse: any) {
         this.weight = apiResponse.weight;
@@ -28,5 +30,6 @@ export class Dog {
         this.referenceImageId = apiResponse.reference_image_id;
         this.image = apiResponse.image;
         this.relatedIds = apiResponse.relatedIds;
+        this.comments = apiResponse.comments;
     }
 }

@@ -3,14 +3,20 @@
         <a class="navbar-brand">
             <img src="assets/edicao logo.png" alt="Dog Breed Logo" class="navbar-logo" (click)="sendClick()">
         </a>
-        <div class="d-flex align-items-center">
-            <img src="assets/bonecoUser.png" alt="User Icon" class="navbar-user-icon" (click)="toggleDropdown()"
-                data-toggle="dropdown">
+
+        <div class="d-flex align-items-center ml-auto">
+            <div class="ml-3">
+                <span class="navbar-welcome">Olá, {{ user.username }}</span>
+            </div>
+
+            <div class="ml-3">
+                <img src="assets/bonecoUser.png" alt="User Icon" class="navbar-user-icon" (click)="toggleDropdown()"
+                    data-toggle="dropdown">
+            </div>
         </div>
-
     </div>
-
 </nav>
+
 <div class="dropdown-menu dropdown-menu-right" [class.show]="showDropdown">
     <a class="dropdown-item" routerLink="/userLikes">Liked Dogs</a>
     <a class="dropdown-item" (click)="sendClick()">Home</a>

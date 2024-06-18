@@ -13,3 +13,11 @@
     right: 0;
     left: auto;
 }
+
+.navbar-welcome {
+    font-size: 1.4rem;
+    /* Ajuste conforme necessário */
+    color: #573c3c;
+    font-weight: bold;
+    padding-right: 1rem;
+}

@@ -33,7 +33,7 @@
 
         </div>
     </div>
-    <div class="pagination-buttons">
+    <div class="pagination-buttons" *ngIf="disableButtons">
         <button class="btn btn-primary" (click)="backpage()" [disabled]="verifyPreviousPage()">Previous</button>
         <button class="btn btn-primary" (click)="nextPage()" [disabled]="verifyNextPage()">Next</button>
     </div>

@@ -6,6 +6,10 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { UserServices } from '../../Services/user.service';
+import { AuthService } from '../../Services/auth.service';
+import { User } from '../../Models/user.model';
+import { Comments } from '../../Models/comments.model';
 
 @Component({
   selector: 'app-dog-race ',
@@ -18,12 +22,15 @@ import { CommonModule } from '@angular/common';
 export class DogRaceComponent implements OnInit {
   id: number;
   dog: Dog | null = null;
-  constructor(private AlldogService: AllDogsService, private activatedRoute: ActivatedRoute) { }
+  constructor(private AlldogService: AllDogsService, private activatedRoute: ActivatedRoute, private authService: AuthService) { }
   relatedDogs: Dog[] = [];
   showRelatedDogs: boolean = false;
-
+  user: User = this.authService.userLogged;
+  comment: Comments = { 'username': this.user.username, "text": '' };
+  deleteActivate: boolean = false;
   ngOnInit(): void {
     this.getDogDetails();
+
   }
   mensagemResponseNull: string = '';
   getDogDetails() {
@@ -33,6 +40,9 @@ export class DogRaceComponent implements OnInit {
     this.AlldogService.getOneDog(this.activatedRoute.snapshot.params['id']).subscribe({
       next: (response) => {
         this.dog = response;
+        if (!this.dog.comments) {
+          this.dog.comments = [];
+        }
         if (this.dog.relatedIds == null) {
           this.mensagemResponseNull = 'Doesnt have related Dogs'
         }
@@ -46,10 +56,21 @@ export class DogRaceComponent implements OnInit {
             })
           }
         }
-
       }
     });
+  }
+  getComments() {
+    this.dog.comments.unshift(this.comment);
+    this.AlldogService.addDogComments(this.dog).subscribe({
+      next: (response) => {
+        this.dog = response;
+        this.comment.text = '';
+      }
+    })
   }
 
 
 }
+
+
+

@@ -28,10 +28,11 @@ export class AllDogsComponent {
   user: User = this.authService.userLogged;
   search: string = '';
   clickTriggered: boolean = false;
-
+  disableButtons: Boolean = true;
   constructor(private AllDogService: AllDogsService, private userService: UserServices, private authService: AuthService) { }
 
   searchDogs(search: string) {
+    this.disableButtons = false;
     this.AllDogService.searchDog(search).subscribe({
       next: (response) => {
         this.dogs = response;
@@ -72,6 +73,7 @@ export class AllDogsComponent {
 
   getAllDogs() {
     this.search = '';
+    this.disableButtons = true;
     this.AllDogService.getDogsForPageNumber(this.pageNumber, this.limit).subscribe({
       next: (response) => {
         this.dogs = response;
@@ -108,6 +110,6 @@ export class AllDogsComponent {
   }
 
   verifyNextPage(): boolean {
-    return this.dogs.length == 10;
+    return this.pageNumber == 20;
   }
 }

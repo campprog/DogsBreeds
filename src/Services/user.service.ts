@@ -28,7 +28,6 @@ export class UserServices {
         return this.http.patch<User>(`http://localhost:3000/users/${user.id}`, {
             password: user.password
         })
-
     }
 
 }
